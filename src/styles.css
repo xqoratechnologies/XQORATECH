@@ -1,0 +1,144 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-surface: var(--surface);
+  --color-navy: var(--navy);
+  --color-navy-foreground: var(--navy-foreground);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-teal: var(--teal);
+  --color-teal-foreground: var(--teal-foreground);
+
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 12px rgba(15, 23, 42, 0.05);
+  --shadow-lift: 0 20px 40px -12px rgba(15, 23, 42, 0.15);
+  --shadow-header: 0 1px 0 rgba(15, 23, 42, 0.06), 0 8px 24px -12px rgba(15, 23, 42, 0.08);
+}
+
+:root {
+  /* Palette: XQORA Logo colors - #001C3D (navy), #00A79D (teal), #545454 (dark gray) */
+  --background: #f4f7fa;
+  --foreground: #001c3d;
+  --surface: #f8fafc;
+
+  --card: #ffffff;
+  --card-foreground: #001c3d;
+  --popover: #ffffff;
+  --popover-foreground: #001c3d;
+
+  --primary: #001c3d;
+  --primary-foreground: #ffffff;
+
+  --navy: #001c3d;
+  --navy-foreground: #ffffff;
+
+  --brand: #00a79d;
+  --brand-foreground: #ffffff;
+
+  --teal: #00a79d;
+  --teal-foreground: #ffffff;
+
+  --secondary: #f1f5f9;
+  --secondary-foreground: #001c3d;
+
+  --muted: #f1f5f9;
+  --muted-foreground: #545454;
+  --accent: #00a79d;
+  --accent-foreground: #ffffff;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --success: #10b981;
+
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #00a79d;
+
+  --radius: 12px;
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: #001c3d;
+  --sidebar-primary: #001c3d;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f1f5f9;
+  --sidebar-accent-foreground: #001c3d;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #00a79d;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    color: inherit;
+  }
+}
+
+@utility container-page {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@utility section-y {
+  padding-block: 5rem;
+}
+
+@media (min-width: 1024px) {
+  .section-y {
+    padding-block: 100px;
+  }
+}
