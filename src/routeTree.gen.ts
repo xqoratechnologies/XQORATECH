@@ -13,8 +13,11 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as TermsOfServiceRouteImport } from './routes/terms-of-service'
 import { Route as WhyXqoraRouteImport } from './routes/why-xqora'
+import { Route as AdminApplicationsRouteImport } from './routes/admin/applications'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -36,14 +39,29 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermsOfServiceRoute = TermsOfServiceRouteImport.update({
+  id: '/terms-of-service',
+  path: '/terms-of-service',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WhyXqoraRoute = WhyXqoraRouteImport.update({
   id: '/why-xqora',
   path: '/why-xqora',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminApplicationsRoute = AdminApplicationsRouteImport.update({
+  id: '/admin/applications',
+  path: '/admin/applications',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -52,16 +70,22 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
   '/why-xqora': typeof WhyXqoraRoute
+  '/admin/applications': typeof AdminApplicationsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
   '/why-xqora': typeof WhyXqoraRoute
+  '/admin/applications': typeof AdminApplicationsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -69,23 +93,46 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
   '/why-xqora': typeof WhyXqoraRoute
+  '/admin/applications': typeof AdminApplicationsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/about' | '/careers' | '/contact' | '/services' | '/why-xqora'
+    | '/'
+    | '/about'
+    | '/careers'
+    | '/contact'
+    | '/privacy-policy'
+    | '/services'
+    | '/terms-of-service'
+    | '/why-xqora'
+    | '/admin/applications'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/careers' | '/contact' | '/services' | '/why-xqora'
+  to:
+    | '/'
+    | '/about'
+    | '/careers'
+    | '/contact'
+    | '/privacy-policy'
+    | '/services'
+    | '/terms-of-service'
+    | '/why-xqora'
+    | '/admin/applications'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/careers'
     | '/contact'
+    | '/privacy-policy'
     | '/services'
+    | '/terms-of-service'
     | '/why-xqora'
+    | '/admin/applications'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -93,8 +140,11 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ServicesRoute: typeof ServicesRoute
+  TermsOfServiceRoute: typeof TermsOfServiceRoute
   WhyXqoraRoute: typeof WhyXqoraRoute
+  AdminApplicationsRoute: typeof AdminApplicationsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -127,6 +177,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -134,11 +191,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/terms-of-service': {
+      id: '/terms-of-service'
+      path: '/terms-of-service'
+      fullPath: '/terms-of-service'
+      preLoaderRoute: typeof TermsOfServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/why-xqora': {
       id: '/why-xqora'
       path: '/why-xqora'
       fullPath: '/why-xqora'
       preLoaderRoute: typeof WhyXqoraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/applications': {
+      id: '/admin/applications'
+      path: '/admin/applications'
+      fullPath: '/admin/applications'
+      preLoaderRoute: typeof AdminApplicationsRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -149,8 +220,11 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
   ServicesRoute: ServicesRoute,
+  TermsOfServiceRoute: TermsOfServiceRoute,
   WhyXqoraRoute: WhyXqoraRoute,
+  AdminApplicationsRoute: AdminApplicationsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -18,4 +18,7 @@ export default defineConfig({
   resolve: {
     alias: { "@": "/src" },
   },
+  ssr: {
+    external: ["googleapis", "resend"],
+  },
 });
