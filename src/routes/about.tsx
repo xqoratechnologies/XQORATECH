@@ -29,6 +29,21 @@ const PILLARS = [
   { Icon: Sparkles, title: "Values", body: "Craft, integrity, and long-term partnership — in every line of code and every conversation." },
 ];
 
+const LEADERSHIP = [
+  { name: "Manas Mhatre", role: "Founder & CEO", img: "/Manas Mhatre - Founder & CEO.jpeg" },
+  { name: "Shravani Gharat", role: "HR", img: "/Shravani Ghanshyam Gharat - HR.jpeg" },
+  { name: "Nikhil Raj", role: "COO", img: "/Nikhil Raj - COO.jpeg" },
+  { name: "Tanish Jangale", role: "CMO", img: "/Tanish Jangale - CMO.jpeg" },
+];
+
+const INTERNS = [
+  { name: "Agam Tyagi", role: "DevOps Intern", img: "/Agam Tyagi - DevOps intern.jpeg" },
+  { name: "Anshu Panwar", role: "AI Automation Intern", img: "/Anshu Panwar - AI Automation Intern.jpeg" },
+  { name: "Bhagya Lakshmi", role: "Software QA Intern", img: "/BHAGYA LAKSHMI - Software Quality Intern (QA).jpeg" },
+  { name: "Hetvi Kataria", role: "Cloud Eng Intern", img: "/Hetvi Kataria - Cloud Engineering Intern.jpeg" },
+  { name: "Shivprakash Mishra", role: "Software Dev Intern", img: "/Shivprakash Mishra - Software Developer Intern.jpeg" },
+];
+
 function AboutPage() {
   return (
     <>
@@ -67,22 +82,52 @@ function AboutPage() {
       </Section>
 
       <Section>
-        <SectionHeading eyebrow="Leadership" title="Meet the Founder" />
-        <div className="mt-14 max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10">
-          <div className="w-full md:w-1/3 shrink-0">
-            <div className="aspect-[3/4] overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-card)]">
-              <img src="/manas-mhatre.jpeg" alt="Manas Chandrakant Mhatre" loading="lazy" className="w-full h-full object-cover" />
+        <SectionHeading eyebrow="Our Team" title="Meet the Minds Behind XQORA" />
+        
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {LEADERSHIP.map((person) => (
+            <div 
+              key={person.name} 
+              className="group overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[var(--shadow-lift)]"
+            >
+              <div className="aspect-[4/5] overflow-hidden">
+                <img 
+                  src={person.img} 
+                  alt={person.name} 
+                  loading="lazy" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                />
+              </div>
+              <div className="p-5 text-center">
+                <h3 className="text-lg font-bold text-foreground">{person.name}</h3>
+                <p className="mt-1 text-sm font-semibold text-brand uppercase tracking-wider">{person.role}</p>
+              </div>
             </div>
-          </div>
-          <div className="w-full md:w-2/3">
-            <h3 className="text-3xl font-bold text-foreground tracking-tight">MANAS CHANDRAKANT MHATRE</h3>
-            <p className="mt-2 text-brand font-semibold tracking-wider text-sm uppercase">CEO AND FOUNDER OF XQORA</p>
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              Manas brings a wealth of experience in software engineering, enterprise architecture, and technological innovation. His vision for XQORA Technologies is deeply rooted in delivering uncompromising quality, deep technical expertise, and establishing true partnerships with clients.
-            </p>
-            <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-              Under his leadership, XQORA is rapidly establishing itself as a trusted partner for organizations navigating complex digital landscapes, prioritizing craft, reliability, and long-term value creation in every engagement.
-            </p>
+          ))}
+        </div>
+
+        <div className="mt-20">
+          <h3 className="text-2xl font-bold text-center text-foreground mb-10">Our Rising Stars</h3>
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+            {INTERNS.map((person) => (
+              <div 
+                key={person.name} 
+                className="group overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-lift)]"
+              >
+                <div className="aspect-[4/5] overflow-hidden">
+                  <img 
+                    src={person.img} 
+                    alt={person.name} 
+                    loading="lazy" 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                  />
+                </div>
+                <div className="p-4 text-center">
+                  <h3 className="text-[15px] font-bold text-foreground leading-snug">{person.name}</h3>
+                  <p className="mt-1.5 text-[11px] font-semibold text-brand uppercase tracking-wider">{person.role}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </Section>
