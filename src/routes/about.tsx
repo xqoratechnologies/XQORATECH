@@ -30,18 +30,18 @@ const PILLARS = [
 ];
 
 const LEADERSHIP = [
-  { name: "Manas Mhatre", role: "Founder & CEO", img: "/Manas Mhatre - Founder & CEO.jpeg" },
-  { name: "Shravani Gharat", role: "HR", img: "/Shravani Ghanshyam Gharat - HR.jpeg" },
-  { name: "Nikhil Raj", role: "COO", img: "/Nikhil Raj - COO.jpeg" },
-  { name: "Tanish Jangale", role: "CMO", img: "/Tanish Jangale - CMO.jpeg" },
+  { name: "Manas Mhatre", role: "Founder & CEO", desc: "Driving innovation and enterprise architecture strategy.", img: "/Manas Mhatre - Founder & CEO.jpeg" },
+  { name: "Shravani Gharat", role: "HR", desc: "Fostering a culture of excellence and talent growth.", img: "/Shravani Ghanshyam Gharat - HR.jpeg" },
+  { name: "Nikhil Raj", role: "COO", desc: "Optimizing operations for flawless global delivery.", img: "/Nikhil Raj - COO.jpeg" },
+  { name: "Tanish Jangale", role: "CMO", desc: "Shaping brand vision and global market presence.", img: "/Tanish Jangale - CMO.jpeg" },
 ];
 
 const INTERNS = [
-  { name: "Agam Tyagi", role: "DevOps Intern", img: "/Agam Tyagi - DevOps intern.jpeg" },
-  { name: "Anshu Panwar", role: "AI Automation Intern", img: "/Anshu Panwar - AI Automation Intern.jpeg" },
-  { name: "Bhagya Lakshmi", role: "Software QA Intern", img: "/BHAGYA LAKSHMI - Software Quality Intern (QA).jpeg" },
-  { name: "Hetvi Kataria", role: "Cloud Eng Intern", img: "/Hetvi Kataria - Cloud Engineering Intern.jpeg" },
-  { name: "Shivprakash Mishra", role: "Software Dev Intern", img: "/Shivprakash Mishra - Software Developer Intern.jpeg" },
+  { name: "Agam Tyagi", role: "DevOps Intern", desc: "Building scalable cloud infrastructure.", img: "/Agam Tyagi - DevOps intern.jpeg" },
+  { name: "Anshu Panwar", role: "AI Automation Intern", desc: "Automating processes with intelligent systems.", img: "/Anshu Panwar - AI Automation Intern.jpeg" },
+  { name: "Bhagya Lakshmi", role: "Software QA Intern", desc: "Ensuring zero-defect software delivery.", img: "/BHAGYA LAKSHMI - Software Quality Intern (QA).jpeg" },
+  { name: "Hetvi Kataria", role: "Cloud Eng Intern", desc: "Deploying resilient cloud solutions.", img: "/Hetvi Kataria - Cloud Engineering Intern.jpeg" },
+  { name: "Shivprakash Mishra", role: "Software Dev Intern", desc: "Crafting robust frontend applications.", img: "/Shivprakash Mishra - Software Developer Intern.jpeg" },
 ];
 
 function AboutPage() {
@@ -88,19 +88,20 @@ function AboutPage() {
           {LEADERSHIP.map((person) => (
             <div 
               key={person.name} 
-              className="group overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[var(--shadow-lift)]"
+              className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-card)] transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[var(--shadow-lift)] hover:border-brand/50"
             >
               <div className="aspect-[4/5] overflow-hidden">
                 <img 
                   src={person.img} 
                   alt={person.name} 
                   loading="lazy" 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" 
                 />
               </div>
-              <div className="p-5 text-center">
+              <div className="p-5 text-center relative bg-card transition-colors duration-500 group-hover:bg-surface/50">
                 <h3 className="text-lg font-bold text-foreground">{person.name}</h3>
                 <p className="mt-1 text-sm font-semibold text-brand uppercase tracking-wider">{person.role}</p>
+                <p className="mt-3 text-[13px] text-muted-foreground leading-relaxed">{person.desc}</p>
               </div>
             </div>
           ))}
@@ -112,19 +113,20 @@ function AboutPage() {
             {INTERNS.map((person) => (
               <div 
                 key={person.name} 
-                className="group overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-lift)]"
+                className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-card)] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:shadow-[var(--shadow-lift)] hover:border-brand/40"
               >
                 <div className="aspect-[4/5] overflow-hidden">
                   <img 
                     src={person.img} 
                     alt={person.name} 
                     loading="lazy" 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" 
                   />
                 </div>
-                <div className="p-4 text-center">
+                <div className="p-4 text-center relative bg-card transition-colors duration-500 group-hover:bg-surface/50 flex flex-col h-full">
                   <h3 className="text-[15px] font-bold text-foreground leading-snug">{person.name}</h3>
-                  <p className="mt-1.5 text-[11px] font-semibold text-brand uppercase tracking-wider">{person.role}</p>
+                  <p className="mt-1 text-[11px] font-semibold text-brand uppercase tracking-wider">{person.role}</p>
+                  <p className="mt-2.5 text-[12px] text-muted-foreground leading-relaxed">{person.desc}</p>
                 </div>
               </div>
             ))}
