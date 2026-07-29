@@ -140,12 +140,17 @@ export const updateApplicationStatusFn = createServerFn({ method: "POST" })
         `;
       }
 
-      await resend.emails.send({
-        from: "XQORA Careers <careers@xqora.com>", // Make sure to verify this domain on Resend
+      const senderEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
+      const { error: resendError } = await resend.emails.send({
+        from: `XQORA Careers <${senderEmail}>`,
         to: email,
         subject: emailSubject,
         html: emailHtml,
       });
+
+      if (resendError) {
+        throw new Error(`Resend API Error: ${resendError.message}`);
+      }
 
       return { success: true, message: `Status updated to ${status} and email sent.` };
     } catch (error: any) {

@@ -92,7 +92,7 @@ function AboutPage() {
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {STATS.map((s) => (
             <div key={s.v} className="rounded-2xl border border-border bg-card p-8 text-center shadow-[var(--shadow-card)]">
-              <div className="text-4xl lg:text-5xl font-display font-bold tracking-tight text-navy">{s.k}</div>
+              <div className="text-4xl lg:text-5xl font-display font-bold tracking-tight text-navy dark:text-brand">{s.k}</div>
               <div className="mt-2 text-sm font-medium text-muted-foreground">{s.v}</div>
             </div>
           ))}

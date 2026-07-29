@@ -101,6 +101,58 @@
   --sidebar-ring: #00a79d;
 }
 
+.dark {
+  /* Premium Luxury Dark Theme */
+  --background: #05080f; /* Very deep midnight/charcoal */
+  --foreground: #f8fafc; /* Crisp off-white */
+  --surface: #0a0f1c; /* Slightly lighter than bg */
+
+  --card: #0d1322;
+  --card-foreground: #f8fafc;
+  --popover: #0d1322;
+  --popover-foreground: #f8fafc;
+
+  --primary: #00a79d; /* Premium Teal */
+  --primary-foreground: #ffffff;
+
+  --navy: #001c3d;
+  --navy-foreground: #ffffff;
+
+  --brand: #00a79d;
+  --brand-foreground: #ffffff;
+
+  --teal: #00a79d;
+  --teal-foreground: #ffffff;
+
+  --secondary: #141c2f; /* Deep indigo-grey */
+  --secondary-foreground: #e2e8f0;
+
+  --muted: #141c2f;
+  --muted-foreground: #94a3b8;
+  --accent: #00a79d;
+  --accent-foreground: #ffffff;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --success: #10b981;
+
+  --border: #1e293b;
+  --input: #1e293b;
+  --ring: #00a79d;
+
+  --radius: 12px;
+
+  --sidebar: #0a0f1c;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #00a79d;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #141c2f;
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: #1e293b;
+  --sidebar-ring: #00a79d;
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
