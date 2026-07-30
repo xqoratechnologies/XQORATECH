@@ -36,14 +36,6 @@ const LEADERSHIP = [
   { name: "Tanish Jangale", role: "CMO", desc: "Shaping brand vision and global market presence.", img: "/Tanish Jangale - CMO.jpeg" },
 ];
 
-const INTERNS = [
-  { name: "Agam Tyagi", role: "DevOps Intern", desc: "Building scalable cloud infrastructure.", img: "/Agam Tyagi - DevOps intern.jpeg" },
-  { name: "Anshu Panwar", role: "AI Automation Intern", desc: "Automating processes with intelligent systems.", img: "/Anshu Panwar - AI Automation Intern.jpeg" },
-  { name: "Bhagya Lakshmi", role: "Software QA Intern", desc: "Ensuring zero-defect software delivery.", img: "/BHAGYA LAKSHMI - Software Quality Intern (QA).jpeg" },
-  { name: "Hetvi Kataria", role: "Cloud Eng Intern", desc: "Deploying resilient cloud solutions.", img: "/Hetvi Kataria - Cloud Engineering Intern.jpeg" },
-  { name: "Shivprakash Mishra", role: "Software Dev Intern", desc: "Crafting robust frontend applications.", img: "/Shivprakash Mishra - Software Developer Intern.jpeg" },
-];
-
 function AboutPage() {
   return (
     <>
@@ -105,32 +97,6 @@ function AboutPage() {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-20">
-          <h3 className="text-2xl font-bold text-center text-foreground mb-10">Our Rising Stars</h3>
-          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-            {INTERNS.map((person) => (
-              <div 
-                key={person.name} 
-                className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-card)] transition-all duration-500 ease-out hover:-translate-y-1.5 hover:shadow-[var(--shadow-lift)] hover:border-brand/40"
-              >
-                <div className="aspect-[4/5] overflow-hidden">
-                  <img 
-                    src={person.img} 
-                    alt={person.name} 
-                    loading="lazy" 
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" 
-                  />
-                </div>
-                <div className="p-4 text-center relative bg-card transition-colors duration-500 group-hover:bg-surface/50 flex flex-col h-full">
-                  <h3 className="text-[15px] font-bold text-foreground leading-snug">{person.name}</h3>
-                  <p className="mt-1 text-[11px] font-semibold text-brand uppercase tracking-wider">{person.role}</p>
-                  <p className="mt-2.5 text-[12px] text-muted-foreground leading-relaxed">{person.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </Section>
 
