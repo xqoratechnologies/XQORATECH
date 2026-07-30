@@ -33,7 +33,7 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full bg-background/85 backdrop-blur transition-shadow",
+        "sticky top-0 z-50 w-full bg-slate-100/90 dark:bg-slate-900/90 backdrop-blur transition-shadow",
         scrolled ? "shadow-[var(--shadow-header)]" : "border-b border-transparent",
       )}
     >
