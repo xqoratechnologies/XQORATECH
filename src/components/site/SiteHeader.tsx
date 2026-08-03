@@ -33,13 +33,17 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full bg-slate-100/90 dark:bg-slate-900/90 backdrop-blur transition-shadow",
+        "sticky top-0 z-50 w-full bg-white/90 dark:bg-background/90 backdrop-blur transition-shadow",
         scrolled ? "shadow-[var(--shadow-header)]" : "border-b border-transparent",
       )}
     >
       <div className="container-page flex h-16 lg:h-20 items-center justify-between gap-6">
-        <Link to="/" className="flex items-center gap-2 shrink-0" aria-label="XQORA Technologies home">
-          <img src="/logo.png" alt="XQORA Technologies" className="h-12 w-auto" />
+        <Link to="/" className="flex items-center gap-2.5 shrink-0" aria-label="XQORA Technologies home">
+          <img src="/logo.png" alt="XQORA Technologies" className="h-9 w-auto" />
+          <span className="font-display text-xl font-extrabold tracking-tight">
+            <span className="text-foreground">XQORA</span>
+            <span className="text-teal ml-1.5 font-semibold">Technologies</span>
+          </span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
