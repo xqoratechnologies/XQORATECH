@@ -6,14 +6,70 @@ import heroImg from "@/assets/hero.jpg";
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-surface to-background">
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-[520px] opacity-60"
+      <div 
+        className="pointer-events-none absolute inset-0 overflow-hidden opacity-40 dark:opacity-15" 
         style={{
-          background:
-            "radial-gradient(60% 60% at 50% 0%, rgba(37,99,235,0.08), rgba(255,255,255,0) 70%)",
+          maskImage: 'linear-gradient(to bottom, black 50%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, black 50%, transparent 100%)'
         }}
-        aria-hidden
-      />
+        aria-hidden="true"
+      >
+        <svg
+          viewBox="0 0 1000 1000"
+          preserveAspectRatio="none"
+          className="h-full w-full"
+        >
+          <defs>
+            <filter id="flag-blur" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="40" />
+            </filter>
+          </defs>
+          {/* Saffron */}
+          <path fill="#FF9933" filter="url(#flag-blur)">
+            <animate
+              attributeName="d"
+              values="M0,0 L333,0 C433,250 233,250 333,500 C433,750 233,750 333,1000 L0,1000 Z; M0,0 L333,0 C233,250 433,250 333,500 C233,750 433,750 333,1000 L0,1000 Z; M0,0 L333,0 C433,250 233,250 333,500 C433,750 233,750 333,1000 L0,1000 Z"
+              dur="8s"
+              repeatCount="indefinite"
+            />
+          </path>
+          {/* White */}
+          <path fill="#FFFFFF" filter="url(#flag-blur)">
+            <animate
+              attributeName="d"
+              values="M333,0 C433,250 233,250 333,500 C433,750 233,750 333,1000 L666,1000 C566,750 766,750 666,500 C566,250 766,250 666,0 Z; M333,0 C233,250 433,250 333,500 C233,750 433,750 333,1000 L666,1000 C766,750 566,750 666,500 C766,250 566,250 666,0 Z; M333,0 C433,250 233,250 333,500 C433,750 233,750 333,1000 L666,1000 C566,750 766,750 666,500 C566,250 766,250 666,0 Z"
+              dur="8s"
+              repeatCount="indefinite"
+            />
+          </path>
+          {/* Green */}
+          <path fill="#138808" filter="url(#flag-blur)">
+            <animate
+              attributeName="d"
+              values="M666,0 C766,250 566,250 666,500 C766,750 566,750 666,1000 L1000,1000 L1000,0 Z; M666,0 C566,250 766,250 666,500 C566,750 766,750 666,1000 L1000,1000 L1000,0 Z; M666,0 C766,250 566,250 666,500 C766,750 566,750 666,1000 L1000,1000 L1000,0 Z"
+              dur="8s"
+              repeatCount="indefinite"
+            />
+          </path>
+          {/* Ashoka Chakra */}
+          <g transform="translate(500, 500)">
+            <circle r="80" stroke="#000080" strokeWidth="6" fill="none" />
+            <circle r="15" fill="#000080" />
+            {Array.from({ length: 24 }).map((_, i) => (
+              <line
+                key={i}
+                x1="0"
+                y1="0"
+                x2="0"
+                y2="-80"
+                stroke="#000080"
+                strokeWidth="3"
+                transform={`rotate(${i * 15})`}
+              />
+            ))}
+          </g>
+        </svg>
+      </div>
       <div className="container-page relative pt-16 lg:pt-24 pb-20 lg:pb-28">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <div className="animate-fade-in">
