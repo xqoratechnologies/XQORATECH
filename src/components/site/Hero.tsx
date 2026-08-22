@@ -6,16 +6,6 @@ import heroImg from "@/assets/hero.jpg";
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-surface to-background">
-      <div
-        className="pointer-events-none absolute inset-0 opacity-60 dark:opacity-30"
-        style={{
-          backgroundImage: 'url("/WhatsApp%20Image%202026-08-15%20at%207.31.27%20AM.jpeg")',
-          backgroundSize: '100% 100%',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-        aria-hidden="true"
-      />
       <div className="container-page relative pt-16 lg:pt-24 pb-20 lg:pb-28">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <div className="animate-fade-in">
