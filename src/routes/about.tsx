@@ -30,7 +30,6 @@ const PILLARS = [
 ];
 
 const LEADERSHIP = [
-  { name: "Manas Mhatre", role: "Founder & CEO", desc: "Driving innovation and enterprise architecture strategy.", img: "/Manas Mhatre - Founder & CEO.jpeg" },
   { name: "Shravani Gharat", role: "HR", desc: "Fostering a culture of excellence and talent growth.", img: "/Shravani Ghanshyam Gharat - HR.jpeg" },
   { name: "Nikhil Raj", role: "COO", desc: "Optimizing operations for flawless global delivery.", img: "/Nikhil Raj - COO.jpeg" },
   { name: "Tanish Jangale", role: "CMO", desc: "Shaping brand vision and global market presence.", img: "/Tanish Jangale - CMO.jpeg" },
