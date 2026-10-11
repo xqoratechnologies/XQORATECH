@@ -29,12 +29,6 @@ const PILLARS = [
   { Icon: Sparkles, title: "Values", body: "Craft, integrity, and long-term partnership — in every line of code and every conversation." },
 ];
 
-const LEADERSHIP = [
-  { name: "Shravani Gharat", role: "HR", desc: "Fostering a culture of excellence and talent growth.", img: "/Shravani Ghanshyam Gharat - HR.jpeg" },
-  { name: "Nikhil Raj", role: "COO", desc: "Optimizing operations for flawless global delivery.", img: "/Nikhil Raj - COO.jpeg" },
-  { name: "Tanish Jangale", role: "CMO", desc: "Shaping brand vision and global market presence.", img: "/Tanish Jangale - CMO.jpeg" },
-];
-
 function AboutPage() {
   return (
     <>
@@ -67,33 +61,6 @@ function AboutPage() {
               </div>
               <h3 className="mt-5 text-xl font-semibold text-foreground">{p.title}</h3>
               <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">{p.body}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <Section>
-        <SectionHeading eyebrow="Our Team" title="Meet the Minds Behind XQORA" />
-        
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {LEADERSHIP.map((person) => (
-            <div 
-              key={person.name} 
-              className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-card)] transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-[var(--shadow-lift)] hover:border-brand/50"
-            >
-              <div className="aspect-[4/5] overflow-hidden">
-                <img 
-                  src={person.img} 
-                  alt={person.name} 
-                  loading="lazy" 
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" 
-                />
-              </div>
-              <div className="p-5 text-center relative bg-card transition-colors duration-500 group-hover:bg-surface/50">
-                <h3 className="text-lg font-bold text-foreground">{person.name}</h3>
-                <p className="mt-1 text-sm font-semibold text-brand uppercase tracking-wider">{person.role}</p>
-                <p className="mt-3 text-[13px] text-muted-foreground leading-relaxed">{person.desc}</p>
-              </div>
             </div>
           ))}
         </div>
