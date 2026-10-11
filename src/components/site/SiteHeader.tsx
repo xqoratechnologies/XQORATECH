@@ -9,6 +9,7 @@ const NAV = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
+  { to: "/products", label: "Products" },
   { to: "/why-xqora", label: "Why XQORA" },
   { to: "/careers", label: "Careers" },
   { to: "/contact", label: "Contact" },
